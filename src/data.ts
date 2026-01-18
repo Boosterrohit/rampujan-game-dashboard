@@ -1,5 +1,4 @@
 import {
-  CreditCard,
   Gamepad2,
   LayoutDashboard,
   Receipt,

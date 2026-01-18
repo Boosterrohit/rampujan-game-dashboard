@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react"
+import {  Suspense } from "react"
 import { Navigate, Route, Routes } from "react-router-dom"
 import { appUrls } from "../url"
 import { Dashboard } from "@/view/page/dashboard"

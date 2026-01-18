@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/card";
 import BarChart from "@/components/element/BarChart";
 import DoughnutChart from "@/components/element/DoughnutChart";
-import { Button } from "@/components/ui/button";
 
 const topPlayers = [
   {
