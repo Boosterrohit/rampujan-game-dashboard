@@ -22,47 +22,47 @@ export function RouletteCampaigns() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold">Roulette Campaigns</h2>
-          <p className="text-muted-foreground mt-1">Create and manage promotional campaigns</p>
+          <h2 className="text-base md:text-3xl font-bold text-white">Roulette Campaigns</h2>
+          <p className="text-gray-400 mt-1 md:text:base text-xs">Create and manage promotional campaigns</p>
         </div>
-        <Button className="gap-2">
+        <Button className="gap-2 bg-[#615ed6]! hover:bg-[#4e48c9]! outline-none! w-32 md:w-auto">
           <Plus className="w-4 h-4" />
-          New Campaign
+          <span className="md:ml-2 text-sm md:text-base">Campaign</span>
         </Button>
       </div>
 
-      <Card>
+      <Card className="bg-[#252937] border-gray-600">
         <CardHeader>
-          <CardTitle>Active Campaigns</CardTitle>
-          <CardDescription>All promotional campaigns</CardDescription>
+          <CardTitle className="text-white">Active Campaigns</CardTitle>
+          <CardDescription className="text-gray-400">All promotional campaigns</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
             {campaigns.map((campaign) => (
               <div
                 key={campaign.id}
-                className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50"
+                className="flex items-center justify-between p-4 border border-gray-600 rounded-lg hover:bg-gray-700"
               >
                 <div className="flex-1">
-                  <p className="font-semibold">{campaign.name}</p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="font-semibold text-white">{campaign.name}</p>
+                  <p className="text-sm text-gray-400">
                     {campaign.startDate} to {campaign.endDate}
                   </p>
                   <p className="text-sm mt-1">
-                    <span className="text-muted-foreground">Players: </span>
-                    <span className="font-semibold">{campaign.players}</span>
+                    <span className="text-gray-400">Players: </span>
+                    <span className="font-semibold text-white">{campaign.players}</span>
                   </p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col md:flex-row items-center gap-3">
                   <span
-                    className={`px-3 py-1 rounded-full text-sm font-semibold ${campaign.status === "Active" ? "bg-green-100 text-green-700" : campaign.status === "Completed" ? "bg-gray-100 text-gray-700" : "bg-blue-100 text-blue-700"}`}
+                    className={`px-3 py-1 rounded-full text-sm font-semibold ${campaign.status === "Active" ? "bg-green-200 text-green-700" : campaign.status === "Completed" ? "bg-gray-200 text-gray-700" : "bg-blue-200 text-blue-700"}`}
                   >
                     {campaign.status}
                   </span>
                   <Button variant="ghost" size="sm">
                     <Edit className="w-4 h-4" />
                   </Button>
-                  <Button variant="ghost" size="sm" className="text-red-600">
+                  <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-500">
                     <Trash2 className="w-4 h-4" />
                   </Button>
                 </div>

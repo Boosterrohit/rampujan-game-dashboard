@@ -194,3 +194,7 @@ body{
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  .checeing{
+    background-color: transparent !important;
+    color: white;
+  }

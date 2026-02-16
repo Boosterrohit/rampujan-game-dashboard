@@ -46,42 +46,42 @@ export function RedeemHistory() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-3xl font-bold">Redeem Request History</h2>
-        <p className="text-muted-foreground mt-1">View historical redemption records</p>
+        <h2 className="text-base md:text-3xl font-bold text-white">Redeem Request History</h2>
+        <p className="text-gray-400 mt-1 md:text:base text-xs">View historical redemption records</p>
       </div>
 
-      <Card>
+      <Card className="bg-[#252937] border-gray-600">
         <CardHeader>
-          <CardTitle>Redemption Records</CardTitle>
-          <CardDescription>All past redemption requests</CardDescription>
+          <CardTitle className="text-white">Redemption Records</CardTitle>
+          <CardDescription className="text-gray-400">All past redemption requests</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4 mb-6">
-            <Input placeholder="Search history..." className="max-w-sm" />
+            <Input placeholder="Search history..." className="max-w-sm text-white" />
           </div>
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b">
-                  <th className="text-left py-3 px-4 font-semibold">Player</th>
-                  <th className="text-left py-3 px-4 font-semibold">Amount</th>
-                  <th className="text-left py-3 px-4 font-semibold">Method</th>
-                  <th className="text-left py-3 px-4 font-semibold">Requested</th>
-                  <th className="text-left py-3 px-4 font-semibold">Processed</th>
-                  <th className="text-left py-3 px-4 font-semibold">Status</th>
+                <tr className="border-b border-gray-300">
+                  <th className="text-left py-3 px-4 font-semibold text-white">Player</th>
+                  <th className="text-left py-3 px-4 font-semibold text-white">Amount</th>
+                  <th className="text-left py-3 px-4 font-semibold text-white">Method</th>
+                  <th className="text-left py-3 px-4 font-semibold text-white">Requested</th>
+                  <th className="text-left py-3 px-4 font-semibold text-white">Processed</th>
+                  <th className="text-left py-3 px-4 font-semibold text-white">Status</th>
                 </tr>
               </thead>
               <tbody>
                 {history.map((item) => (
-                  <tr key={item.id} className="border-b hover:bg-muted/50">
-                    <td className="py-3 px-4">{item.player}</td>
-                    <td className="py-3 px-4 font-semibold">{item.amount}</td>
-                    <td className="py-3 px-4">{item.method}</td>
-                    <td className="py-3 px-4">{item.date}</td>
-                    <td className="py-3 px-4">{item.processedDate}</td>
+                  <tr key={item.id} className="border-b border-gray-600 hover:bg-gray-700">
+                    <td className="py-3 px-4 text-gray-300">{item.player}</td>
+                    <td className="py-3 px-4 font-semibold text-gray-400">{item.amount}</td>
+                    <td className="py-3 px-4 text-gray-300">{item.method}</td>
+                    <td className="py-3 px-4 text-gray-300">{item.date}</td>
+                    <td className="py-3 px-4 text-gray-300">{item.processedDate}</td>
                     <td className="py-3 px-4">
                       <span
-                        className={`px-2 py-1 rounded text-sm font-semibold ${item.status === "Completed" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}
+                        className={`px-2 py-1 rounded text-sm font-semibold ${item.status === "Completed" ? "bg-green-200 text-green-700" : "bg-red-200 text-red-700"}`}
                       >
                         {item.status}
                       </span>

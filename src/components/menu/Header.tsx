@@ -1,31 +1,42 @@
-import { Bell } from "lucide-react";
+
+import { Bell, Menu, X } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
-const Header = () => {
+interface HeaderProps {
+  isSidebarOpen: boolean;
+  toggleSidebar: () => void;
+}
+
+const Header = ({ isSidebarOpen, toggleSidebar }: HeaderProps) => {
   return (
-    <div className="bg-white px-4 py-3 shadow flex items-center justify-between">
-      <div className="flex flex-col">
-        <span className="font-bold text-2xl">GamePro Admin Dashboard</span>
-        <span className="text-gray-600 text-xs">
-          Manage your casino operations
-        </span>
-      </div>
-      <div>
-        
+    <div className="bg-[#242834] px-4 py-3 shadow flex items-center justify-between">
+      <div className="flex items-center gap-2">
+        <button 
+          onClick={toggleSidebar}
+          className="lg:hidden bg-gray-600 p-2 rounded-md transition-colors checeing"
+        >
+          {isSidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+        </button>
+        <div className="flex flex-col">
+          <span className="font-bold text-sx sm:text-2xl text-white">RowGaming</span>
+          <span className="text-gray-300 text-xs hidden sm:block">
+            Manage your casino operations
+          </span>
+        </div>
       </div>
       <div className="flex items-center gap-2">
-        <div className="relative cursor-pointer hover:bg-gray-100 rounded-md p-2 ">
-            <Bell className="w-5 h-5 text-gray-600 " />
-            <div className="h-3 w-3 bg-red-600 rounded-full absolute top-1 border-white border-2 right-1"></div>
+        <div className="relative cursor-pointer hover:bg-gray-100 rounded-md p-2">
+          <Bell className="w-5 h-5 text-white" />
+          <div className="h-3 w-3 bg-red-600 rounded-full absolute top-1 border-white border-2 right-1"></div>
         </div>
-        <div className="h-10 bg-gray-200 w-0.5 mx-2"></div>
-        <Avatar>
+        <div className="h-10 bg-gray-600 w-0.5 mx-2 "></div>
+        <Avatar className="">
           <AvatarImage src="https://github.com/shadcn.png" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-        <div className="flex flex-col">
-            <span className="text-sm text-gray-800">John Doe</span>
-        <span className="text-xs text-gray-500">Admin</span>
+        <div className="flex-col hidden md:flex">
+          <span className="text-sm text-white">John Doe</span>
+          <span className="text-xs text-gray-300">Admin</span>
         </div>
       </div>
     </div>

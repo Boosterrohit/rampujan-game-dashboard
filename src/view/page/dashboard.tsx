@@ -68,23 +68,23 @@ export function Dashboard() {
 
   return (
     <div className="space-y-6 sm:space-y-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {stats.map((stat) => {
           const Icon = stat.icon;
           return (
-            <Card key={stat.title}>
+            <Card key={stat.title} className="bg-[#252937] border-gray-600">
               <CardContent className="pt-4 sm:pt-6">
                 <div className="flex items-center justify-between gap-2">
                   <div className="min-w-0">
-                    <p className="text-xs sm:text-sm text-muted-foreground truncate">
+                    <p className="text-xs sm:text-sm text-gray-400 truncate">
                       {stat.title}
                     </p>
-                    <p className="text-lg sm:text-2xl font-bold mt-1 sm:mt-2">
+                    <p className="text-sm sm:text-2xl font-bold mt-1 sm:mt-2 text-white">
                       {stat.value}
                     </p>
                     <p className="text-xs text-green-600 mt-1">{stat.change}</p>
                   </div>
-                  <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-primary opacity-20 flex-shrink-0" />
+                  <Icon className="w-8 h-8 sm:w-10 sm:h-10  opacity-20 flex-shrink-0 text-gray-300" />
                 </div>
               </CardContent>
             </Card>
@@ -117,22 +117,22 @@ export function Dashboard() {
   </div>
 </div> */}
 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-  <div className="bg-white p-4 shadow-md border-2 w-full rounded-md lg:col-span-2">
+  <div className="bg-[#1e232e] p-4 shadow-md border-2 border-gray-600 w-full rounded-md lg:col-span-2">
     <p className="flex flex-col mb-4">
-      <span className="text-xl font-semibold">
+      <span className="text-xl font-semibold text-white">
         Revenue vs Payouts
       </span>
       <span className="text-gray-400 text-sm">
         Daily comparison for the current week
       </span>
     </p>
-    <div className="w-full h-[300px] sm:h-[350px]">
+    <div className="w-full h-[300px] sm:h-[350px] overflow-auto">
       <BarChart />
     </div>
   </div>
-  <div className="bg-white p-4 shadow-md border-2 rounded-md lg:col-span-1">
+  <div className="bg-[#1e232e] p-4 shadow-md border-2 border-gray-600 rounded-md lg:col-span-1">
     <p className="flex flex-col mb-4">
-      <span className="text-xl font-semibold">
+      <span className="text-xl font-semibold text-white">
         Game Distribution
       </span>
       <span className="text-gray-400 text-sm">
@@ -145,10 +145,10 @@ export function Dashboard() {
   </div>
 </div>
 
-      <Card>
+      <Card className="bg-[#252937] border-gray-600">
         <CardHeader className="p-4 sm:p-6">
-          <CardTitle className="text-lg sm:text-xl">Top Players</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-lg sm:text-xl text-white">Top Players</CardTitle>
+          <CardDescription className="text-gray-400">
             Highest performing players by total bets
           </CardDescription>
         </CardHeader>
@@ -156,17 +156,17 @@ export function Dashboard() {
           <div className="overflow-x-auto -mx-4 sm:mx-0">
             <table className="w-full text-xs sm:text-sm px-4 sm:px-0">
               <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left py-2 sm:py-3 px-3 sm:px-4 font-semibold">
+                <tr className="border-b  border-gray-300">
+                  <th className="text-left py-2 sm:py-3 px-3 sm:px-4 font-semibold text-white">
                     Player Name
                   </th>
-                  <th className="text-left py-2 sm:py-3 px-3 sm:px-4 font-semibold">
+                  <th className="text-left py-2 sm:py-3 px-3 sm:px-4 font-semibold text-white">
                     Total Bets
                   </th>
-                  <th className="text-left py-2 sm:py-3 px-3 sm:px-4 font-semibold">
+                  <th className="text-left py-2 sm:py-3 px-3 sm:px-4 font-semibold text-white">
                     Winnings
                   </th>
-                  <th className="text-left py-2 sm:py-3 px-3 sm:px-4 font-semibold">
+                  <th className="text-left py-2 sm:py-3 px-3 sm:px-4 font-semibold text-white">
                     Status
                   </th>
                 </tr>
@@ -175,23 +175,23 @@ export function Dashboard() {
                 {topPlayers.map((player) => (
                   <tr
                     key={player.id}
-                    className="border-b border-border hover:bg-muted/50 transition-colors"
+                    className="border-b  border-gray-600 hover:bg-gray-700 transition-colors"
                   >
-                    <td className="py-2 sm:py-3 px-3 sm:px-4 font-medium whitespace-nowrap">
+                    <td className="py-2 sm:py-3 px-3 sm:px-4 font-medium whitespace-nowrap text-gray-300">
                       {player.name}
                     </td>
-                    <td className="py-2 sm:py-3 px-3 sm:px-4 font-semibold text-primary whitespace-nowrap">
+                    <td className="py-2 sm:py-3 px-3 sm:px-4 font-semibold  whitespace-nowrap text-gray-400">
                       {player.totalBets}
                     </td>
-                    <td className="py-2 sm:py-3 px-3 sm:px-4 font-semibold text-green-600 whitespace-nowrap">
+                    <td className="py-2 sm:py-3 px-3 sm:px-4 font-semibold text-green-300 whitespace-nowrap">
                       {player.winnings}
                     </td>
                     <td className="py-2 sm:py-3 px-3 sm:px-4">
                       <span
                         className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-medium whitespace-nowrap ${
                           player.status === "Active"
-                            ? "bg-green-100 text-green-800"
-                            : "bg-gray-100 text-gray-800"
+                            ? "bg-green-200 text-green-800"
+                            : "bg-gray-300 text-gray-800"
                         }`}
                       >
                         {player.status}
