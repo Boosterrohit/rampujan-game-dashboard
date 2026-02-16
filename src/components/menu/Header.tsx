@@ -35,7 +35,7 @@ const Header = ({ isSidebarOpen, toggleSidebar }: HeaderProps) => {
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <div className="flex-col hidden md:flex">
-          <span className="text-sm text-white">John Doe</span>
+          <span className="text-sm text-white">Rampujan Bhadwa </span>
           <span className="text-xs text-gray-300">Admin</span>
         </div>
       </div>
