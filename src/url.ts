@@ -8,4 +8,5 @@ export const appUrls = {
     redeemHistory: '/redeem-request-history',
     loadWallet: '/load-wallet',
     transactionRecord: '/transaction-records',
+    chatClient: '/chat'
 }

@@ -1,6 +1,7 @@
 import {
   Gamepad2,
   LayoutDashboard,
+  MessageCircle,
   Receipt,
   RefreshCw,
   Settings,
@@ -82,18 +83,16 @@ export const MENU = [
         slug: "/transaction-records",
         icons: Receipt,
       },
-      // {
-      //   id: 10,
-      //   title: "Game Management",
-      //   slug: "/game-management",
-      //   icons: Gamepad2,
-      // },
-      // {
-      //   id: 11,
-      //   title: "Modes of Payments",
-      //   slug: "/modes-of-payments",
-      //   icons: CreditCard,
-      // },
+    
+    ],
+  },
+
+  {
+    id: 7,
+    name: "Message",
+    SUBMENU: [
+      { id: 10, title: "Chat With Client", slug: "/chat", icons: MessageCircle },
+      
     ],
   },
 ];

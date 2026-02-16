@@ -10,6 +10,7 @@ import { RedeemRequests } from "@/view/page/redeem/redeem-request"
 import { RedeemHistory } from "@/view/page/redeem/redeem-history"
 import { LoadWallet } from "@/view/page/wallet/load-wallet"
 import { TransactionRecords } from "@/view/page/wallet/transactionRecord"
+import MessagePage from "@/components/element/MessagePage"
 
 // import MapContainer from "../view/dashboard/map/MapContainer"
 
@@ -34,6 +35,8 @@ const PrivateRoute = () => {
         <Route path={appUrls.redeemHistory} element={<RedeemHistory />} />
         <Route path={appUrls.loadWallet} element={<LoadWallet/>} />
         <Route path={appUrls.transactionRecord} element={<TransactionRecords/>} />
+        <Route path={appUrls.chatClient} element={<MessagePage/>} />
+
         <Route path="*" element={<Navigate to={appUrls.dashboard} replace />} />
       </Routes>
     </Suspense>
